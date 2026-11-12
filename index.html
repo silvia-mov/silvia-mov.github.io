@@ -30,28 +30,29 @@
 </script>
 <style>
 :root {
-  --bg: #fbfaf7; --panel: #ffffff; --text: #18181a; --text2: #57564f; --line: #e4e3df;
-  --accent: #0b6e4f; --link: #2a78d6; --tag: #f1f0ec;
+  --bg: #fffafb; --panel: #ffffff; --text: #1d1a1c; --text2: #5c5459; --line: #f3dde4;
+  --accent: #1f7f68; --link: #1f7f68; --tag: #fec9d7; --tagtext: #7a2440; --btn: #39b89a; --btntext: #08261f; --hero1: #b9eee1; --hero2: #fec9d7; --pink: #ff5883; --dash: #79d3be;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #141413; --panel: #1d1d1b; --text: #f0efec; --text2: #b3b2aa; --line: #33332f;
-    --accent: #3fb48a; --link: #4b93ea; --tag: #262624;
+    --bg: #161314; --panel: #201b1d; --text: #f5eef1; --text2: #bfb3b8; --line: #3a2f33;
+    --accent: #79d3be; --link: #79d3be; --tag: #4a2632; --tagtext: #ffc2d3; --btn: #39b89a; --btntext: #08261f; --hero1: #123a31; --hero2: #3d1a26; --pink: #ff91ad; --dash: #2f6f60;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #141413; --panel: #1d1d1b; --text: #f0efec; --text2: #b3b2aa; --line: #33332f;
-  --accent: #3fb48a; --link: #4b93ea; --tag: #262624;
+  --bg: #161314; --panel: #201b1d; --text: #f5eef1; --text2: #bfb3b8; --line: #3a2f33;
+  --accent: #79d3be; --link: #79d3be; --tag: #4a2632; --tagtext: #ffc2d3; --btn: #39b89a; --btntext: #08261f; --hero1: #123a31; --hero2: #3d1a26; --pink: #ff91ad; --dash: #2f6f60;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
-header { padding: 64px 0 36px; border-bottom: 1px solid var(--line); }
+header { padding: 64px 0 40px; background: linear-gradient(120deg, var(--hero1), var(--hero2)); }
 .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
 h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.01em; }
 .lead { font-size: 19px; color: var(--text2); max-width: 680px; margin: 0; }
 h2 { font-size: 24px; margin: 44px 0 16px; }
+h2::after { content: ""; display: block; width: 48px; height: 4px; border-radius: 2px; background: var(--pink); margin-top: 8px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
 .card img { width: 100%; height: 190px; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); background: #fff; }
@@ -59,12 +60,12 @@ h2 { font-size: 24px; margin: 44px 0 16px; }
 .card h3 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; }
 .card p { color: var(--text2); margin: 0 0 14px; font-size: 15.5px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
-.tag { background: var(--tag); color: var(--text2); font-size: 13px; padding: 2px 9px; border-radius: 99px; }
+.tag { background: var(--tag); color: var(--tagtext); font-size: 13px; padding: 2px 9px; border-radius: 99px; }
 .links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
 .btn { display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14.5px; border: 1px solid var(--line); color: var(--text); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary { background: var(--btn); border-color: var(--btn); color: var(--btntext); }
 .soon { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.soon li { border: 1px dashed var(--line); border-radius: 10px; padding: 14px 16px; color: var(--text2); font-size: 15px; }
+.soon li { border: 1.5px dashed var(--dash); border-radius: 10px; padding: 14px 16px; color: var(--text2); font-size: 15px; }
 .soon b { color: var(--text); display: block; margin-bottom: 2px; }
 a { color: var(--link); }
 footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text2); }
