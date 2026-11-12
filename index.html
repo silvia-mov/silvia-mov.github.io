@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>silvia-mov | Comercio exterior y datos abiertos de Paraguay</title>
+<meta name="description" content="Proyectos abiertos sobre comercio exterior de Paraguay: acuerdos comerciales, políticas industriales de los socios y datos de aduana y certificados de origen, con código en Python y R.">
+<link rel="canonical" href="https://silvia-mov.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PY">
+<meta property="og:title" content="Comercio exterior y datos abiertos de Paraguay">
+<meta property="og:description" content="Proyectos abiertos sobre comercio exterior de Paraguay, con código en Python y R.">
+<meta property="og:url" content="https://silvia-mov.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://silvia-mov.github.io/",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "silvia-mov",
+    "url": "https://github.com/silvia-mov",
+    "knowsAbout": ["Comercio exterior", "Economía", "Acuerdos comerciales", "Datos abiertos", "Paraguay", "Python", "R", "Stata"]
+  },
+  "hasPart": [
+    {"@type": "SoftwareSourceCode", "name": "Comercio exterior de Paraguay por acuerdo comercial", "codeRepository": "https://github.com/silvia-mov/comercio-exterior-paraguay-dnit-mic", "url": "https://silvia-mov.github.io/comercio-exterior-paraguay-dnit-mic/"},
+    {"@type": "SoftwareSourceCode", "name": "Políticas industriales de los socios y exportaciones de Paraguay", "codeRepository": "https://github.com/silvia-mov/paraguay-exports-industrial-policy"}
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7; --panel: #ffffff; --text: #18181a; --text2: #57564f; --line: #e4e3df;
+  --accent: #0b6e4f; --link: #2a78d6; --tag: #f1f0ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141413; --panel: #1d1d1b; --text: #f0efec; --text2: #b3b2aa; --line: #33332f;
+    --accent: #3fb48a; --link: #4b93ea; --tag: #262624;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141413; --panel: #1d1d1b; --text: #f0efec; --text2: #b3b2aa; --line: #33332f;
+  --accent: #3fb48a; --link: #4b93ea; --tag: #262624;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header { padding: 64px 0 36px; border-bottom: 1px solid var(--line); }
+.eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.01em; }
+.lead { font-size: 19px; color: var(--text2); max-width: 680px; margin: 0; }
+h2 { font-size: 24px; margin: 44px 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.card img { width: 100%; height: 190px; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); background: #fff; }
+.card .body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.card h3 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; }
+.card p { color: var(--text2); margin: 0 0 14px; font-size: 15.5px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+.tag { background: var(--tag); color: var(--text2); font-size: 13px; padding: 2px 9px; border-radius: 99px; }
+.links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14.5px; border: 1px solid var(--line); color: var(--text); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.soon { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.soon li { border: 1px dashed var(--line); border-radius: 10px; padding: 14px 16px; color: var(--text2); font-size: 15px; }
+.soon b { color: var(--text); display: block; margin-bottom: 2px; }
+a { color: var(--link); }
+footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text2); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Proyectos abiertos</p>
+    <h1>Comercio exterior y datos abiertos de Paraguay</h1>
+    <p class="lead">Código, datos y métodos públicos para medir y entender el comercio exterior paraguayo y sus acuerdos comerciales. Todo se puede revisar, repetir y reutilizar.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Proyectos</h2>
+  <div class="grid">
+
+    <article class="card">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/comercio-exterior-paraguay-dnit-mic/main/docs/img/acuerdos_2021_dark.png">
+        <img src="https://raw.githubusercontent.com/silvia-mov/comercio-exterior-paraguay-dnit-mic/main/docs/img/acuerdos_2021_light.png" alt="Gráfico del comercio de Paraguay con y sin acuerdo comercial, 2021" loading="lazy">
+      </picture>
+      <div class="body">
+        <h3>Comercio exterior de Paraguay por acuerdo comercial</h3>
+        <p>Cuánto exporta e importa Paraguay usando efectivamente cada acuerdo comercial, con los despachos aduaneros públicos de la DNIT, y el cruce con los certificados de origen de la VUE, de 2011 a 2026.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">Datos abiertos</span><span class="tag">MERCOSUR</span><span class="tag">ALADI</span></div>
+        <div class="links">
+          <a class="btn primary" href="https://silvia-mov.github.io/comercio-exterior-paraguay-dnit-mic/">Ver la página</a>
+          <a class="btn" href="https://github.com/silvia-mov/comercio-exterior-paraguay-dnit-mic">Código</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/paraguay-exports-industrial-policy/main/docs/img/efecto_principal_dark.png">
+        <img src="https://raw.githubusercontent.com/silvia-mov/paraguay-exports-industrial-policy/main/docs/img/efecto_principal_light.png" alt="Gráfico del efecto de las medidas de los socios sobre las exportaciones de Paraguay" loading="lazy">
+      </picture>
+      <div class="body">
+        <h3>Políticas industriales de los socios y exportaciones de Paraguay</h3>
+        <p>¿Qué pasa con las exportaciones de un país pequeño cuando sus socios subsidian su propia producción? ¿Lo protege un acuerdo comercial? Réplica en Python y R de un estudio del Banco Mundial y aplicación a Paraguay, 2012–2022.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">Stata</span><span class="tag">Econometría</span><span class="tag">Modelo de gravedad</span></div>
+        <div class="links">
+          <a class="btn primary" href="https://github.com/silvia-mov/paraguay-exports-industrial-policy">Ver el proyecto</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <h2>En preparación</h2>
+  <ul class="soon">
+    <li><b>Textos de los acuerdos</b>Acuerdos comerciales de Paraguay reunidos y ordenados.</li>
+    <li><b>Listas de la nomenclatura</b>Listas de la NCM y de bienes de informática, telecomunicaciones y capital.</li>
+    <li><b>Cambios de la NCM</b>Seguimiento de las modificaciones de la nomenclatura.</li>
+    <li><b>Gráficos interactivos</b>Una página para explorar el comercio exterior con gráficos dinámicos.</li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap">
+    Proyectos independientes con datos públicos. Código en <a href="https://github.com/silvia-mov">github.com/silvia-mov</a>.
+  </div>
+</footer>
+</body>
+</html>
