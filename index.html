@@ -144,7 +144,10 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
     </article>
 
     <article class="card">
-      <img src="https://silvia-mov.github.io/normativa-mercosur/logo.svg" alt="Logo del asistente de normas del MERCOSUR" loading="lazy" style="object-fit:contain;padding:24px;background:linear-gradient(120deg,#b9eee1,#fec9d7)">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/normativa-mercosur/main/docs/img/tarjeta_dark.png">
+        <img src="https://raw.githubusercontent.com/silvia-mov/normativa-mercosur/main/docs/img/tarjeta_light.png" alt="Portada de silv[ia], asistente de consultas sobre normas del MERCOSUR" loading="lazy">
+      </picture>
       <div class="body">
         <h3>Consultas sobre normas del MERCOSUR</h3>
         <p>Las 1.130 decisiones del Consejo del Mercado Común (1991–2026) en texto, con un buscador y un asistente que responde solo con el texto de las normas y cita la fuente.</p>
@@ -156,13 +159,28 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
       </div>
     </article>
 
+    <article class="card">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/cambios_ncm_dark.png">
+        <img src="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/cambios_ncm_light.png" alt="Gráfico de los códigos NCM que cambian en cada versión, 2002–2010" loading="lazy">
+      </picture>
+      <div class="body">
+        <h3>Nomenclatura Común del MERCOSUR: versiones y correlaciones</h3>
+        <p>¿A qué código de hoy corresponde un código NCM de otro año? Las versiones de la NCM de 2002 a 2026 y sus tablas de correlación, encadenadas versión por versión y controladas contra el sistema oficial.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NCM</span><span class="tag">Sistema Armonizado</span><span class="tag">Datos abiertos</span></div>
+        <div class="links">
+          <a class="btn primary" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur">Ver el proyecto</a>
+          <a class="btn" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/tree/main/datos">Datos</a>
+        </div>
+      </div>
+    </article>
+
   </div>
 
   <h2>En preparación</h2>
   <ul class="soon">
     <li><b>Textos de los acuerdos</b>Acuerdos comerciales de Paraguay reunidos y ordenados.</li>
     <li><b>Listas de la nomenclatura</b>Listas de la NCM y de bienes de informática, telecomunicaciones y capital.</li>
-    <li><b>Cambios de la NCM</b>Seguimiento de las modificaciones de la nomenclatura.</li>
     <li><b>Gráficos interactivos</b>Una página para explorar el comercio exterior con gráficos dinámicos.</li>
   </ul>
 </main>
