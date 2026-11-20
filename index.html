@@ -96,9 +96,11 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
 .comentar p { margin: 0 0 14px; }
 .comentar a.boton { display: inline-block; padding: 9px 16px; border-radius: 8px; background: #39b89a; color: #08261f; font-weight: 600; text-decoration: none; }
 @media print { .comentar { display: none !important; } }
+.aviso-top { background: var(--panel); border-bottom: 1px solid var(--line); color: var(--text2); font-size: 13.5px; text-align: center; padding: 7px 16px; }
 </style>
 </head>
 <body>
+<div class="aviso-top">Proyectos independientes. No representan ni cuentan con el respaldo de ninguna institución pública ni de ningún gobierno.</div>
 <header>
   <div class="wrap">
     <p class="eyebrow">Proyectos abiertos</p>
@@ -129,6 +131,22 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
 
     <article class="card">
       <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/comercio-exterior-paraguay-dnit-mic/main/docs/img/tarjeta_aduana_dark.png">
+        <img src="https://raw.githubusercontent.com/silvia-mov/comercio-exterior-paraguay-dnit-mic/main/docs/img/tarjeta_aduana_light.png" alt="Ilustración de un despacho aduanero con sello" loading="lazy">
+      </picture>
+      <div class="body">
+        <h3>Datos de aduana de Paraguay, explicados</h3>
+        <p>Cómo leer los despachos de la DNIT: regímenes y zonas francas, por qué se pagó o no arancel, Turismo de Compras y alertas de peso. Con los archivos de cada año para descargar.</p>
+        <div class="tags"><span class="tag">Aduana</span><span class="tag">Aranceles</span><span class="tag">Datos abiertos</span><span class="tag">Excel</span></div>
+        <div class="links">
+          <a class="btn primary" href="https://silvia-mov.github.io/comercio-exterior-paraguay-dnit-mic/aduana.html">Ver la página</a>
+          <a class="btn" href="https://github.com/silvia-mov/dnit-datos-anuales">Datos</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/paraguay-exports-industrial-policy/main/docs/img/tarjeta_dark.png">
         <img src="https://raw.githubusercontent.com/silvia-mov/paraguay-exports-industrial-policy/main/docs/img/tarjeta_light.png" alt="Gráfico del efecto de las medidas de los socios sobre las exportaciones de Paraguay" loading="lazy">
       </picture>
@@ -146,7 +164,7 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
     <article class="card">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/normativa-mercosur/main/docs/img/tarjeta_dark.png">
-        <img src="https://raw.githubusercontent.com/silvia-mov/normativa-mercosur/main/docs/img/tarjeta_light.png" alt="Portada de silv[ia], asistente de consultas sobre normas del MERCOSUR" loading="lazy">
+        <img src="https://raw.githubusercontent.com/silvia-mov/normativa-mercosur/main/docs/img/tarjeta_light.png" alt="Ilustración de silv[ia], el asistente de normas del MERCOSUR" loading="lazy">
       </picture>
       <div class="body">
         <h3>Consultas sobre normas del MERCOSUR</h3>
@@ -162,15 +180,15 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
     <article class="card">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_dark.png">
-        <img src="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_light.png" alt="Gráfico de los códigos NCM que cambian en cada versión, 2002–2010" loading="lazy">
+        <img src="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_light.png" alt="Ilustración de un código NCM que cambia entre 2002, 2007 y 2026" loading="lazy">
       </picture>
       <div class="body">
         <h3>Nomenclatura Común del MERCOSUR: versiones y correlaciones</h3>
-        <p>¿A qué código de hoy corresponde un código NCM de otro año? Las versiones de la NCM de 2002 a 2026 y sus tablas de correlación, encadenadas versión por versión y controladas contra el sistema oficial.</p>
+        <p>¿A qué código de hoy corresponde un código NCM de otro año? Un buscador con las 63 versiones de la NCM de 2002 a 2026 y sus tablas de correlación, encadenadas versión por versión y controladas contra el sistema oficial.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">NCM</span><span class="tag">Sistema Armonizado</span><span class="tag">Datos abiertos</span></div>
         <div class="links">
-          <a class="btn primary" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur">Ver el proyecto</a>
-          <a class="btn" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/tree/main/datos">Datos</a>
+          <a class="btn primary" href="https://silvia-mov.github.io/nomenclaturas-y-correlaciones-del-mercosur/">Ver la página</a>
+          <a class="btn" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur">Código</a>
         </div>
       </div>
     </article>
@@ -178,15 +196,15 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
     <article class="card">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_listas_dark.png">
-        <img src="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_listas_light.png" alt="Gráfico de la cantidad de códigos NCM en las listas BK, BIT, LNE y de materias primas, 2018–2026" loading="lazy">
+        <img src="https://raw.githubusercontent.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/main/docs/img/tarjeta_listas_light.png" alt="Ilustración de las cuatro listas: BK, BIT, LNE y materias primas" loading="lazy">
       </picture>
       <div class="body">
         <h3>Listas de la nomenclatura: bienes de capital, informática, excepciones y materias primas</h3>
-        <p>¿Qué códigos NCM tienen arancel distinto del común en Paraguay? Las listas BK, BIT, LNE y de materias primas notificadas al MERCOSUR desde 2018, con un buscador, y todos los códigos pasados a la NCM de hoy.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">NCM</span><span class="tag">Arancel Externo Común</span><span class="tag">Datos abiertos</span></div>
+        <p>Qué productos tienen un arancel especial en Paraguay y desde cuándo, según las listas notificadas al MERCOSUR, con cada código traducido a la NCM de hoy.</p>
+        <div class="tags"><span class="tag">NCM</span><span class="tag">Aranceles</span><span class="tag">MERCOSUR</span><span class="tag">Datos abiertos</span></div>
         <div class="links">
           <a class="btn primary" href="https://silvia-mov.github.io/nomenclaturas-y-correlaciones-del-mercosur/listas.html">Ver la página</a>
-          <a class="btn" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur/tree/main/datos/listas">Datos</a>
+          <a class="btn" href="https://github.com/silvia-mov/nomenclaturas-y-correlaciones-del-mercosur">Código</a>
         </div>
       </div>
     </article>
