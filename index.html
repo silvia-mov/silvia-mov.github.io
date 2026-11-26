@@ -51,7 +51,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
 header { padding: 64px 0 40px; background: linear-gradient(120deg, var(--hero1), var(--hero2)); }
 .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
@@ -102,8 +102,13 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
 .comentar a.boton { display: inline-block; padding: 9px 16px; border-radius: 8px; background: #5e8f88; color: #08261f; font-weight: 600; text-decoration: none; }
 @media print { .comentar { display: none !important; } }
 .aviso-top { background: var(--panel); border-bottom: 1px solid var(--line); color: var(--text2); font-size: 13.5px; text-align: center; padding: 7px 16px; }
+
+/* Tipografía: Fraunces (títulos y cifras grandes) + Source Sans 3 (texto) */
+body, button, input, select, textarea { font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+h1, h2, h3, .kpi .v, .disp .v, .muestra .v { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-optical-sizing: auto; font-weight: 600; letter-spacing: 0; }
 </style>
 <script>(function(){try{var x=localStorage.getItem("tema");if(x==="light"||x==="dark")document.documentElement.setAttribute("data-theme",x);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="aviso-top">Proyectos independientes. No representan ni cuentan con el respaldo de ninguna institución pública ni de ningún gobierno.</div>
@@ -276,7 +281,7 @@ footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--lin
   var b = document.createElement("button");
   b.type = "button"; b.className = "boton-tema";
   var st = document.createElement("style");
-  st.textContent = ".boton-tema{position:fixed;top:10px;right:12px;z-index:50;font:600 13px/1 system-ui,sans-serif;padding:8px 12px;border-radius:99px;border:1px solid var(--line,#ccc);background:var(--panel,#fff);color:var(--text,#222);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}@media print{.boton-tema{display:none}}@media (min-width:701px){.aviso-top{padding-right:150px!important;padding-left:150px!important}}@media (max-width:700px){.boton-tema{top:6px;right:8px;font-size:12px;padding:6px 9px}.aviso-top{padding-right:108px!important;text-align:left!important}}";
+  st.textContent = ".boton-tema{position:fixed;top:10px;right:12px;z-index:50;font:600 13px/1 'Source Sans 3',system-ui,sans-serif;padding:8px 12px;border-radius:99px;border:1px solid var(--line,#ccc);background:var(--panel,#fff);color:var(--text,#222);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}@media print{.boton-tema{display:none}}@media (min-width:701px){.aviso-top{padding-right:150px!important;padding-left:150px!important}}@media (max-width:700px){.boton-tema{top:6px;right:8px;font-size:12px;padding:6px 9px}.aviso-top{padding-right:108px!important;text-align:left!important}}";
   document.head.appendChild(st);
   function sistema() { return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
   function aplicar(t) {
