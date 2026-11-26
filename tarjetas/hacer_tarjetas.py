@@ -30,19 +30,22 @@ ILUS = {
       <rect x="60" y="150" width="32" height="30" rx="6" fill="{G2}"/><rect x="108" y="150" width="32" height="30" rx="6" fill="{G2}"/><rect x="156" y="150" width="32" height="30" rx="6" fill="{G2}"/>
       <path d="M255 100l50 18v40c0 34-22 52-50 64-28-12-50-30-50-64v-40z" fill="{V}"/><path d="M255 100l50 18v40c0 34-22 52-50 64z" fill="{V2}" opacity=".55"/>
       <path d="M236 160l14 14 26-28" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>''',
-    "normativa": f'''<svg viewBox="0 0 320 260"><rect x="165" y="20" width="100" height="52" rx="12" fill="{V}"/><path d="M190 72l-6 16 22-16z" fill="{V}"/>
-      <circle cx="195" cy="46" r="6" fill="#fff"/><circle cx="215" cy="46" r="6" fill="#fff"/><circle cx="235" cy="46" r="6" fill="#fff"/>
-      <path d="M120 55 v28" stroke="{V}" stroke-width="5"/><circle cx="118" cy="50" r="9" fill="{V2}"/>
-      <rect x="62" y="75" width="150" height="130" rx="60" fill="#1f3f3a"/><rect x="80" y="100" width="114" height="72" rx="34" fill="#f5eef1"/>
-      <path d="M103 136 q10-12 20 0 M152 136 q10-12 20 0" fill="none" stroke="#1f3f3a" stroke-width="6" stroke-linecap="round"/><path d="M125 152 q12 12 24 0" fill="none" stroke="#1f3f3a" stroke-width="6" stroke-linecap="round"/>
-      <rect x="85" y="190" width="104" height="60" fill="#1f3f3a"/><path d="M40 115h16 M44 132h14 M40 148h16" stroke="{V}" stroke-width="5" stroke-linecap="round"/></svg>''',
+    "normativa": f'''<svg viewBox="0 0 320 260"><rect x="190" y="14" width="100" height="50" rx="12" fill="{V}"/><path d="M206 64l-4 18 22-18z" fill="{V}"/>
+      <circle cx="218" cy="39" r="6" fill="#fff"/><circle cx="240" cy="39" r="6" fill="#fff"/><circle cx="262" cy="39" r="6" fill="#fff"/>
+      <path d="M140 52v26" stroke="{G}" stroke-width="6" stroke-linecap="round"/><circle cx="140" cy="46" r="10" fill="{V2}"/>
+      <rect x="62" y="122" width="26" height="44" rx="10" fill="{G}"/><rect x="192" y="122" width="26" height="44" rx="10" fill="{G}"/>
+      <rect x="80" y="78" width="120" height="104" rx="26" fill="{G}"/><rect x="96" y="96" width="88" height="66" rx="16" fill="#f5eef1"/>
+      <path d="M113 124 q9-10 18 0 M149 124 q9-10 18 0" fill="none" stroke="#1f3f3a" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M128 140 q12 11 24 0" fill="none" stroke="#1f3f3a" stroke-width="5.5" stroke-linecap="round"/>
+      <rect x="54" y="196" width="172" height="54" rx="22" fill="{G2}"/><rect x="122" y="182" width="36" height="18" fill="{G}"/>
+      <circle cx="140" cy="222" r="10" fill="#fff" opacity=".8"/></svg>''',
     "nomenclaturas": f'''<svg viewBox="0 0 320 260">''' + "".join(
-        f'<g transform="translate({10+i*34},{30+i*82})"><rect width="245" height="62" rx="12" fill="#fff"/><rect width="62" height="62" rx="12" fill="{c}"/>'
-        f'<text x="31" y="38" text-anchor="middle" font-family="Source Sans 3" font-weight="700" font-size="19" fill="{tc}">{a}</text>'
-        f'<text x="78" y="41" font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="26" fill="#1d1a1c">{cod}</text></g>'
-        for i, (a, cod, c, tc) in enumerate([("2002", "8525.20.22", G2, "#1d1a1c"), ("2007", "8517.12.31", G, "#1d1a1c"), ("2026", "8517.13.00", V, "#fff")]))
-        + f'<path d="M50 95 q0 18 26 22" fill="none" stroke="{V}" stroke-width="5"/><path d="M70 108l12 10-15 5z" fill="{V}"/>'
-          f'<path d="M84 177 q0 18 26 22" fill="none" stroke="{V}" stroke-width="5"/><path d="M104 190l12 10-15 5z" fill="{V}"/></svg>',
+        f'<g transform="translate({10+i*34},{14+i*88})"><rect width="245" height="58" rx="12" fill="#fff"/><rect width="62" height="58" rx="12" fill="{c}"/>'
+        f'<text x="31" y="36" text-anchor="middle" font-family="Source Sans 3" font-weight="700" font-size="19" fill="{tc}">{a}</text>'
+        f'<text x="78" y="39" font-family="ui-monospace,Menlo,monospace" font-weight="700" font-size="26" fill="#1d1a1c">{cod}</text></g>'
+        for i, (a, cod, c, tc) in enumerate([("2002", "8525.20.22", G2, "#1d1a1c"), ("2007", "8517.12.31", G, "#fff"), ("2026", "8517.13.00", V, "#fff")]))
+        + "".join(f'<path d="M{24+i*34} {76+i*88} v10 q0 12 12 12 h12" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>'
+                  f'<path d="M{46+i*34} {91+i*88} l10 7 -10 7z" fill="currentColor"/>' for i in range(2)) + '</svg>',
     "listas": f'''<svg viewBox="0 0 320 260">''' + "".join(
         f'<g transform="translate({20+(i%2)*18},{18+i*58})"><rect width="270" height="46" rx="23" fill="#fff"/><rect width="78" height="46" rx="23" fill="{c}"/>'
         f'<text x="39" y="31" text-anchor="middle" font-family="Source Sans 3" font-weight="700" font-size="20" fill="{tc}">{s}</text>'
@@ -85,7 +88,7 @@ def html(et, tit, sub, ilus, k):
 <style>html,body{{margin:0}}body{{width:1200px;height:560px;background:linear-gradient(120deg,{k["g1"]},{k["g2"]});font-family:"Source Sans 3";display:flex;align-items:center;box-sizing:border-box;padding:0 70px}}
 .izq{{flex:1}}.pill{{display:inline-block;background:{k["pill"]};color:{k["pt"]};font-weight:700;font-size:21px;padding:8px 18px;border-radius:99px}}
 h1{{font-family:Fraunces;font-weight:600;font-size:64px;line-height:1.08;color:{k["t"]};margin:22px 0 18px;max-width:640px;letter-spacing:-.5px}}em{{font-style:normal;color:{k["r"]}}}
-p{{font-size:24px;color:{k["s"]};margin:0;max-width:620px;line-height:1.35}}.der svg{{width:330px;height:270px;display:block}}</style></head>
+p{{font-size:24px;color:{k["s"]};margin:0;max-width:620px;line-height:1.35}}.der{{color:{k["t"]}}}.der svg{{width:330px;height:270px;display:block}}</style></head>
 <body><div class="izq"><span class="pill">{et}</span><h1>{tit}</h1><p>{sub}</p></div><div class="der">{ILUS[ilus]}</div></body></html>'''
 
 
