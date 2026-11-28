@@ -58,6 +58,16 @@ ILUS = {
       <text x="95" y="72" font-family="Source Sans 3" font-weight="700" font-size="20" fill="{G}">ACE 72</text>
       <rect x="95" y="92" width="100" height="9" rx="4.5" fill="{G2}"/><rect x="95" y="114" width="110" height="9" rx="4.5" fill="{G3}"/><rect x="95" y="136" width="90" height="9" rx="4.5" fill="{G3}"/><rect x="95" y="158" width="105" height="9" rx="4.5" fill="{G3}"/>
       <circle cx="230" cy="170" r="42" fill="{V}"/><circle cx="230" cy="170" r="22" fill="none" stroke="#fff" stroke-width="8"/><path d="M246 186l20 20" stroke="#fff" stroke-width="10" stroke-linecap="round"/></svg>''',
+    "graficos": f'''<svg viewBox="0 0 320 260"><rect x="20" y="20" width="135" height="105" rx="12" fill="#fff"/>
+      <rect x="40" y="80" width="18" height="30" rx="3" fill="{G3}"/><rect x="66" y="62" width="18" height="48" rx="3" fill="{G2}"/><rect x="92" y="44" width="18" height="66" rx="3" fill="{G}"/><rect x="118" y="70" width="18" height="40" rx="3" fill="{G2}"/>
+      <rect x="165" y="20" width="135" height="105" rx="12" fill="#fff"/>
+      <path d="M182 105 L210 82 L235 92 L262 55 L285 45" fill="none" stroke="{V}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="285" cy="45" r="7" fill="{V}"/>
+      <rect x="20" y="135" width="280" height="105" rx="12" fill="#fff"/>
+      <path d="M50 170 H190" stroke="{G}" stroke-width="6" stroke-linecap="round"/><path d="M180 160 l14 10 -14 10" fill="none" stroke="{G}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="50" cy="170" r="7" fill="{G3}"/>
+      <path d="M250 208 H110" stroke="{V2}" stroke-width="6" stroke-linecap="round"/><path d="M120 198 l-14 10 14 10" fill="none" stroke="{V2}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="250" cy="208" r="7" fill="{V3}"/></svg>''',
 }
 
 TARJ = [  # repositorio, archivo, etiqueta, título (con *resaltado*), subtítulo, ilustración
@@ -73,6 +83,8 @@ TARJ = [  # repositorio, archivo, etiqueta, título (con *resaltado*), subtítul
      "Versiones 2002–2026 y tablas de correlación encadenadas.", "nomenclaturas"),
     ("nomenclaturas-y-correlaciones-del-mercosur", "tarjeta_listas", "Listas de la nomenclatura · Paraguay", "Qué productos tienen un arancel *especial*",
      "Bienes de capital, informática, excepciones y materias primas, 2018–2026.", "listas"),
+    ("silvia-mov.github.io", "tarjeta_graficos", "Gráficos interactivos · Paraguay", "El comercio exterior de Paraguay *en gráficos*",
+     "A quién se le vende, con qué acuerdo y cuánto vale de verdad cada preferencia.", "graficos"),
     ("textos-acuerdos-paraguay", "tarjeta", "Acuerdos comerciales · Paraguay", "Cada acuerdo, *completo* y en un solo lugar",
      "Textos, anexos y protocolos de la ALADI: ACE 35, 36, 58, 59 y 72.", "textos"),
 ]
@@ -106,7 +118,8 @@ def main(raiz):
         for modo, k in TEMAS.items():
             h = tmp / f"{repo}_{nombre}_{modo}.html"
             h.write_text(html(et, tit, sub, il, k), encoding="utf-8")
-            lista.append([str(h), str(raiz / repo / "docs" / "img" / f"{nombre}_{modo}.png")])
+            carpeta = raiz / repo / "img" if repo == "silvia-mov.github.io" else raiz / repo / "docs" / "img"
+            lista.append([str(h), str(carpeta / f"{nombre}_{modo}.png")])
     (tmp / "lista.json").write_text(json.dumps(lista))
     (tmp / "render.js").write_text(NODE)
     subprocess.run(["node", str(tmp / "render.js"), str(tmp / "lista.json")], check=True)

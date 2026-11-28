@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gráficos de comercio exterior de Paraguay | silvia-mov</title>
+<meta property="og:image" content="https://silvia-mov.github.io/img/tarjeta_graficos_light.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://silvia-mov.github.io/img/tarjeta_graficos_light.png">
+<meta name="description" content="Gráficos interactivos sobre el comercio exterior de Paraguay: a quién le vende, con qué acuerdo, cuánto vale de verdad cada preferencia y cómo cambian las reglas del MERCOSUR.">
+<link rel="canonical" href="https://silvia-mov.github.io/graficos/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PY">
+<meta property="og:title" content="El comercio exterior de Paraguay en gráficos">
+<meta property="og:description" content="Gráficos interactivos con datos abiertos de aduana, aranceles y normas del MERCOSUR.">
+<meta property="og:url" content="https://silvia-mov.github.io/graficos/">
+<style>
+:root {
+  --bg: #fdfaf3; --panel: #ffffff; --text: #1d1a1c; --text2: #5c5459; --line: #e9e1d3;
+  --accent: #3f6b65; --link: #3f6b65; --tag: #e6dae7; --tagtext: #4f3050; --btn: #679891; --btntext: #08261f; --hero1: #b7d0cc; --hero2: #e6dae7; --pink: #774d78; --dash: #8db2ac;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161314; --panel: #201b1d; --text: #f5eef1; --text2: #bfb3b8; --line: #3a2f33;
+    --accent: #8db2ac; --link: #8db2ac; --tag: #3d2e40; --tagtext: #d9c6da; --btn: #679891; --btntext: #08261f; --hero1: #24403c; --hero2: #3a2a3b; --pink: #af8eb1; --dash: #3f6b65;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161314; --panel: #201b1d; --text: #f5eef1; --text2: #bfb3b8; --line: #3a2f33;
+  --accent: #8db2ac; --link: #8db2ac; --tag: #3d2e40; --tagtext: #d9c6da; --btn: #679891; --btntext: #08261f; --hero1: #24403c; --hero2: #3a2a3b; --pink: #af8eb1; --dash: #3f6b65;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header { padding: 64px 0 40px; background: linear-gradient(120deg, var(--hero1), var(--hero2)); }
+.eyebrow { color: var(--accent); font-weight: 600; font-size: 15px; margin: 0 0 8px; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.01em; }
+.lead { font-size: 19px; color: var(--text2); max-width: 680px; margin: 0; }
+h2 { font-size: 24px; margin: 44px 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.card img { width: 100%; height: 190px; object-fit: cover; object-position: center; display: block; border-bottom: 1px solid var(--line); background: #fff; }
+.card .body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.card h3 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; }
+.card p { color: var(--text2); margin: 0 0 14px; font-size: 15.5px; }
+.tags { margin: 0 0 16px; color: var(--text2); font-size: 14px; }
+.tag + .tag::before { content: ", "; }
+.links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-block; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14.5px; border: 1px solid var(--line); color: var(--text); }
+.btn.primary { background: var(--btn); border-color: var(--btn); color: var(--btntext); }
+.soon { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.soon li { border: 1.5px dashed var(--dash); border-radius: 10px; padding: 14px 16px; color: var(--text2); font-size: 15px; }
+.soon b { color: var(--text); display: block; margin-bottom: 2px; }
+a { color: var(--link); }
+footer { margin-top: 56px; padding: 28px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text2); }
+/* Versión para imprimir o guardar en PDF */
+@media print {
+  @page { size: A4; margin: 14mm 12mm; }
+  :root { --bg: #ffffff; --panel: #ffffff; }
+  body { background: #fff !important; font-size: 11pt; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header { padding: 18px 0 16px !important; }
+  nav.toc, .btns, .controls, .slider, .elegir, #p-lista, .tip, footer .btn { display: none !important; }
+  section { padding: 14px 0 0 !important; }
+  .card, .kpi, .respuesta, .explica, .big-answer, table, .steps li, .consulta, .dl .card { break-inside: avoid; }
+  h2, h3, .sub, section > p { break-after: avoid; }
+  section { break-inside: avoid; }
+  #r-explica { display: none !important; }
+  h2 { font-size: 16pt; }
+  .card { box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .tw { overflow: visible; }
+}
+.contador[hidden] { display: none; }
+.contador { display: inline-block; margin: 12px 0 0; padding: 4px 12px; border-radius: 99px; background: var(--tag, #e6dae7); color: var(--tagtext, #4f3050); font-size: 13px; }
+.comentar { margin: 40px auto 0; max-width: 960px; padding: 0 16px; }
+.comentar .caja { border: 1.5px dashed #8db2ac; border-radius: 12px; padding: 18px 20px; }
+.comentar h2 { margin: 0 0 8px; }
+.comentar p { margin: 0 0 14px; }
+.comentar a.boton { display: inline-block; padding: 9px 16px; border-radius: 8px; background: #5e8f88; color: #08261f; font-weight: 600; text-decoration: none; }
+@media print { .comentar { display: none !important; } }
+.aviso-top { background: var(--panel); border-bottom: 1px solid var(--line); color: var(--text2); font-size: 13.5px; text-align: center; padding: 7px 16px; }
+
+/* Tipografía: Fraunces (títulos y cifras grandes) + Source Sans 3 (texto) */
+body, button, input, select, textarea { font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+h1, h2, h3, .kpi .v, .disp .v, .muestra .v { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-optical-sizing: auto; font-weight: 600; letter-spacing: 0; }
+/* Párrafos justificados, con separación en sílabas */
+p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+/* Revisión de diseño: contraste de botones, tamaño de toque y letra mínima */
+.boton { background: #679891 !important; }
+.todo, .flujo p { margin-left: auto; margin-right: auto; }
+small { font-size: max(12px, .75em); }
+@media (max-width: 700px) {
+  nav a, nav.toc a, .toc a { display: inline-flex; align-items: center; min-height: 44px; }
+  summary { padding-top: 10px; padding-bottom: 10px; }
+  button, .btn, .boton, select, input[type=search], input[type=text] { min-height: 44px; }
+  .boton-tema { min-height: 40px; }
+}
+/* Página de gráficos */
+.graf-sec { margin-top: 8px; }
+.graf-sec > p.que { color: var(--text2); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 10px; margin: 0 0 18px; }
+.card .mirar { font-size: 15px; color: var(--text2); margin: 8px 0 6px; }
+.card .mirar b { color: var(--text); }
+.indice { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.indice a { color: var(--text2); text-decoration: none; } .indice a:hover { color: var(--text); text-decoration: underline; }
+.proximos li { margin-bottom: 4px; }
+.dw-embed { display: block; }
+@media print { .dw-embed { display: none !important; } }
+</style>
+<script>(function(){try{var x=localStorage.getItem("tema");if(x==="light"||x==="dark")document.documentElement.setAttribute("data-theme",x);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+<div class="aviso-top">Proyecto independiente. No representa ni cuenta con el respaldo de ninguna institución pública ni de ningún gobierno.</div>
+<header><div class="wrap">
+  <p class="eyebrow">Gráficos interactivos · Paraguay</p>
+  <h1>El comercio exterior de Paraguay en gráficos</h1>
+  <p class="lead">Preguntas que los datos abiertos de aduana, los aranceles de los socios y las normas del MERCOSUR permiten contestar. Pasá el mouse o el dedo por cada gráfico para ver los números.</p>
+</div></header>
+<main class="wrap">
+  <nav class="indice" aria-label="Secciones"><a href="#a-quien">¿A quién le vende y con qué acuerdo?</a><a href="#cuanto-vale">¿Cuánto vale cada acuerdo?</a><a href="#reglas">Las reglas de juego</a><a href="#proximos">Próximos gráficos</a></nav>
+
+  <section class="graf-sec" id="a-quien">
+    <h2>¿A quién le vende Paraguay y con qué acuerdo?</h2>
+    <p class="que">Las preferencias arancelarias de Paraguay están casi todas en América Latina. Afuera, lo que se vende paga el arancel general.</p>
+    <div class="card"><iframe class="dw-embed" data-dw="https://datawrapper.dwcdn.net/R2X83/" title="Mapa de lo exportado con preferencia (gráfico interactivo)" aria-label="Gráfico interactivo" src="https://datawrapper.dwcdn.net/R2X83/" scrolling="no" frameborder="0" style="width:0;min-width:100% !important;border:none;" height="560" loading="lazy"></iframe>
+      <p class="mirar"><b>Qué mirar:</b> el contraste entre Sudamérica, oscura, y el resto del mundo, casi blanco. Estados Unidos, Taiwán, Israel o los Países Bajos le compran mucho a Paraguay, pero casi nada entra con preferencia.</p></div>
+    <div class="card"><iframe class="dw-embed" data-dw="https://datawrapper.dwcdn.net/FY0Jy/" title="Uso de los acuerdos por socio, 2011 y 2025 (gráfico interactivo)" aria-label="Gráfico interactivo" src="https://datawrapper.dwcdn.net/FY0Jy/" scrolling="no" frameborder="0" style="width:0;min-width:100% !important;border:none;" height="420" loading="lazy"></iframe>
+      <p class="mirar"><b>Qué mirar:</b> la dirección de cada flecha. Bolivia, Chile y Perú usan mucho más el acuerdo que en 2011; con Brasil y México se usa menos.</p></div>
+  </section>
+
+  <section class="graf-sec" id="cuanto-vale">
+    <h2>¿Cuánto vale de verdad cada acuerdo?</h2>
+    <p class="que">Una preferencia solo sirve si el socio cobra arancel a los demás, y llega de a poco, según los cronogramas de cada acuerdo.</p>
+    <div class="card"><iframe class="dw-embed" data-dw="https://datawrapper.dwcdn.net/6bAo8/" title="Ventaja real del acuerdo por socio (gráfico interactivo)" aria-label="Gráfico interactivo" src="https://datawrapper.dwcdn.net/6bAo8/" scrolling="no" frameborder="0" style="width:0;min-width:100% !important;border:none;" height="420" loading="lazy"></iframe>
+      <p class="mirar"><b>Qué mirar:</b> dónde termina cada flecha. Con Colombia, Ecuador y Bolivia casi todo lo que vende Paraguay pagaría arancel sin el acuerdo; con Perú, más de la mitad entraría libre igual.</p></div>
+    <div class="card"><iframe class="dw-embed" data-dw="https://datawrapper.dwcdn.net/qr1AB/" title="Desgravación del acuerdo con Perú (gráfico interactivo)" aria-label="Gráfico interactivo" src="https://datawrapper.dwcdn.net/qr1AB/" scrolling="no" frameborder="0" style="width:0;min-width:100% !important;border:none;" height="520" loading="lazy"></iframe>
+      <p class="mirar"><b>Qué mirar:</b> los escalones de 2006, 2012 y 2017, y lo que nunca llegó: casi todo textil.</p></div>
+  </section>
+
+  <section class="graf-sec" id="reglas">
+    <h2>Las reglas de juego</h2>
+    <p class="que">El MERCOSUR produce normas todo el tiempo, y pocas se derogan.</p>
+    <div class="card"><iframe class="dw-embed" data-dw="https://datawrapper.dwcdn.net/ldctX/" title="Normas del MERCOSUR vigentes y derogadas por año (gráfico interactivo)" aria-label="Gráfico interactivo" src="https://datawrapper.dwcdn.net/ldctX/" scrolling="no" frameborder="0" style="width:0;min-width:100% !important;border:none;" height="520" loading="lazy"></iframe>
+      <p class="mirar"><b>Qué mirar:</b> la parte lila, lo derogado, que casi desaparece después de 2012, y el salto de las directivas de la Comisión de Comercio desde 2017.</p></div>
+  </section>
+
+  <section class="graf-sec" id="proximos">
+    <h2>Próximos gráficos</h2>
+    <ul class="proximos">
+      <li>Lo que se dejó sobre la mesa: exportaciones al MERCOSUR que pagaron arancel pudiendo entrar con 0%.</li>
+      <li>El ahorro en aranceles de lo importado gracias a los acuerdos.</li>
+      <li>Pocos productos explican casi todo, y una tabla con buscador de productos.</li>
+      <li>Precio y cantidad: ¿Paraguay vende más o vende más caro?</li>
+      <li>Aranceles de los socios por capítulo, y quién más entra con preferencia.</li>
+      <li>El salto falso: cuando cambia el código NCM, la estadística miente.</li>
+    </ul>
+  </section>
+</main>
+
+<section class="comentar" id="comentarios">
+  <div class="caja">
+    <h2>¿Una duda, un error o una sugerencia?</h2>
+    <p>Dejá tu comentario de forma anónima: no se pide nombre ni correo, y solo lo lee la autora de la página.</p>
+    <a class="boton" href="https://forms.gle/Vis1NdaswVxbDw446" target="_blank" rel="noopener">Dejar un comentario</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Proyectos independientes con datos públicos. Código en <a href="https://github.com/silvia-mov">github.com/silvia-mov</a>.
+    <p id="contador" class="contador" hidden></p>
+  </div>
+</footer>
+<!-- Contador de visitas sin cookies (GoatCounter) -->
+<script data-goatcounter="https://silvia-mov.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  var base = "https://silvia-mov.goatcounter.com/counter/";
+  var caja = document.getElementById("contador"), partes = [];
+  function pedir(ruta) {
+    return fetch(base + encodeURIComponent(ruta) + ".json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return j && j.count ? String(j.count).replace(/[,\u202f ]/g, ".") : null; })
+      .catch(function () { return null; });
+  }
+  function mostrar() { if (caja && partes.length) { caja.textContent = "Esta página tuvo " + partes.join(" y ") + "."; caja.hidden = false; } }
+  pedir(location.pathname).then(function (v) { if (v) { partes.unshift(v + " visitas"); mostrar(); } });
+})();
+</script>
+<script>
+/* Botón Claro / Oscuro: la página recuerda la elección (si el navegador lo permite). */
+(function () {
+  var r = document.documentElement;
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "boton-tema";
+  var st = document.createElement("style");
+  st.textContent = ".boton-tema{position:fixed;top:10px;right:12px;z-index:50;font:600 13px/1 'Source Sans 3',system-ui,sans-serif;padding:8px 12px;border-radius:99px;border:1px solid var(--line,#ccc);background:var(--panel,#fff);color:var(--text,#222);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}@media print{.boton-tema{display:none}}@media (min-width:701px){.aviso-top{padding-right:150px!important;padding-left:150px!important}}@media (max-width:700px){.boton-tema{top:6px;right:8px;font-size:12px;padding:6px 9px}.aviso-top{padding-right:108px!important;text-align:left!important}}";
+  document.head.appendChild(st);
+  function sistema() { return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+  function aplicar(t) {
+    if (t) r.setAttribute("data-theme", t); else r.removeAttribute("data-theme");
+    var ef = t || sistema();
+    document.querySelectorAll('picture source[media*="prefers-color-scheme"], picture source[data-orig]').forEach(function (s) {
+      if (!s.dataset.orig) s.dataset.orig = s.media;
+      s.media = t ? (ef === "dark" ? "all" : "not all") : s.dataset.orig;
+    });
+    b.textContent = ef === "dark" ? "Modo claro" : "Modo oscuro";
+    b.setAttribute("aria-label", ef === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+  }
+  var guardado = null;
+  try { guardado = localStorage.getItem("tema"); } catch (e) {}
+  aplicar(guardado === "light" || guardado === "dark" ? guardado : null);
+  b.addEventListener("click", function () {
+    var nuevo = (r.getAttribute("data-theme") || sistema()) === "dark" ? "light" : "dark";
+    try { localStorage.setItem("tema", nuevo); } catch (e) {}
+    aplicar(nuevo);
+  });
+  document.body.appendChild(b);
+})();
+</script>
+<script>
+/* Datawrapper: alto automático y modo claro/oscuro sincronizado con el botón de la página */
+(function () {
+  window.addEventListener("message", function (e) {
+    var h = e.data && e.data["datawrapper-height"]; if (!h) return;
+    document.querySelectorAll("iframe.dw-embed").forEach(function (f) { if (f.contentWindow === e.source) for (var k in h) f.style.height = h[k] + "px"; });
+  });
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function oscuro() { var t = document.documentElement.getAttribute("data-theme"); return t ? t === "dark" : mq.matches; }
+  function aplicar() {
+    var d = oscuro();
+    document.querySelectorAll("iframe.dw-embed").forEach(function (f) {
+      var u = f.getAttribute("data-dw") + "?dark=" + d; if (f.getAttribute("src") !== u) f.setAttribute("src", u);
+    });
+  }
+  new MutationObserver(aplicar).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (mq.addEventListener) mq.addEventListener("change", aplicar);
+  aplicar();
+})();
+</script>
+</body>
+</html>

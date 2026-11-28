@@ -9,6 +9,8 @@ import os
 import sys
 from pathlib import Path
 
+import gettext
+
 import pandas as pd
 import pycountry
 import requests
@@ -50,6 +52,18 @@ def grafico(clave, tipo, titulo, df, describe, visualize, notas="", extra=None):
     return cid
 
 
+ES = gettext.translation("iso3166-1", pycountry.LOCALES_DIR, languages=["es"])
+CORTOS = {"KOR": "Corea del Sur", "PRK": "Corea del Norte", "RUS": "Rusia", "TWN": "Taiwán", "IRN": "Irán", "SYR": "Siria",
+          "VNM": "Vietnam", "LAO": "Laos", "MDA": "Moldavia", "TZA": "Tanzania", "COD": "República Democrática del Congo", "CIV": "Costa de Marfil"}
+
+
+def nombre_es(iso3):
+    """Nombre del país en español, corto: «Bolivia, Estado plurinacional de» -> «Bolivia»."""
+    if iso3 in CORTOS:
+        return CORTOS[iso3]
+    return ES.gettext(pycountry.countries.get(alpha_3=iso3).name).split(",")[0]
+
+
 def numeros(d, cols):
     for c in cols:
         d[c] = pd.to_numeric(d[c], errors="coerce")
@@ -63,7 +77,7 @@ def mapa(datos):
     a = a[a["DNIT_EXPORTADO_USD"] >= 1e6]                                   # menos de USD 1 millón: sin color
     a["ISO3"] = [getattr(pycountry.countries.get(alpha_2=c), "alpha_3", None) for c in a["CODIGO_PAIS"]]
     a = a.dropna(subset=["ISO3"])
-    w = pd.DataFrame({"ISO3": a["ISO3"], "Pais": a["PAIS"].str.title(), "Exportado": (a["DNIT_EXPORTADO_USD"] / 1e6).round(1),
+    w = pd.DataFrame({"ISO3": a["ISO3"], "Pais": a["ISO3"].map(nombre_es), "Exportado": (a["DNIT_EXPORTADO_USD"] / 1e6).round(1),
                       "ConAcuerdo": (a["DNIT_CON_ACUERDO_USD"] / 1e6).round(1),
                       "Pct": (100 * a["DNIT_CON_ACUERDO_USD"] / a["DNIT_EXPORTADO_USD"]).round(1)})
     guardar(w, "mapa_preferencias")
